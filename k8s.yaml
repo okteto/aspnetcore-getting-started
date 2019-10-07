@@ -15,11 +15,10 @@ spec:
       terminationGracePeriodSeconds: 0
       containers:
       - name: api
-        image: mcr.microsoft.com/dotnet/core/aspnet
+        image: okteto/hello-world:aspnetcore
         imagePullPolicy: Always
-        command: ["tail", "-f", "/dev/null"]
         ports:
-        - containerPort: 5001
+        - containerPort: 5000
 
 ---
 
