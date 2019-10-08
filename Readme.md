@@ -9,8 +9,8 @@ Okteto works in any Kubernetes cluster by reading your local kubeconfig file. If
 Get a local version of the ASP.NET Sample App by executing the following commands in your local terminal:
 
 ```console
-$ git clone https://github.com/okteto/aspnet-getting-started
-$ cd aspnet-getting-started
+$ git clone https://github.com/okteto/aspnetcore-getting-started
+$ cd aspnetcore-getting-started
 ```
 
 The `k8s.yml` file contains the raw Kubernetes manifests to deploy the ASP.NET Core Sample App. Run the application by executing:

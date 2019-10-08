@@ -4,5 +4,6 @@ environment:
 - ASPNETCORE_ENVIRONMENT=Development
 command:
 - bash
+workdir: /usr/src/app
 forward:
 - 5000:5000
