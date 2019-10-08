@@ -1,0 +1,39 @@
+apiVersion: apps/v1
+kind: Deployment
+metadata:
+  name: hello-world
+spec:
+  replicas: 1
+  selector:
+    matchLabels:
+      app: hello-world
+  template:
+    metadata:
+      labels:
+        app: hello-world
+    spec:
+      terminationGracePeriodSeconds: 0
+      containers:
+      - name: api
+        image: okteto/hello-world:aspnetcore
+        imagePullPolicy: Always
+        ports:
+        - containerPort: 5000
+
+---
+
+apiVersion: v1
+kind: Service
+metadata:
+  name: hello-world
+  annotations:
+    dev.okteto.com/auto-ingress: "true"
+  labels:
+    app: hello-world
+spec:
+  type: ClusterIP
+  ports:
+    - name: hello-world
+      port: 5000
+  selector:
+    app: hello-world
