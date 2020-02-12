@@ -11,7 +11,8 @@ volumes:
   - /root/.vscode-server
   - /root/.nuget/packages
   - /root/.local/share/NuGet/v3-cache
+  - /root/.dotnet
 resources:
   limits:
-    cpu: 1Gi
-    memory: 1Gi
+    cpu: 2
+    memory: 2Gi
