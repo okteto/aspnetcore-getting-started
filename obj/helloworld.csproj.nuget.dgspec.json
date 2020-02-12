@@ -1,17 +1,17 @@
 {
   "format": 1,
   "restore": {
-    "/usr/src/app/helloworld.csproj": {}
+    "/okteto/helloworld.csproj": {}
   },
   "projects": {
-    "/usr/src/app/helloworld.csproj": {
+    "/okteto/helloworld.csproj": {
       "version": "1.0.0",
       "restore": {
-        "projectUniqueName": "/usr/src/app/helloworld.csproj",
+        "projectUniqueName": "/okteto/helloworld.csproj",
         "projectName": "helloworld",
-        "projectPath": "/usr/src/app/helloworld.csproj",
+        "projectPath": "/okteto/helloworld.csproj",
         "packagesPath": "/root/.nuget/packages/",
-        "outputPath": "/usr/src/app/obj/",
+        "outputPath": "/okteto/obj/",
         "projectStyle": "PackageReference",
         "configFilePaths": [
           "/root/.nuget/NuGet/NuGet.Config"
@@ -45,6 +45,20 @@
           ],
           "assetTargetFallback": true,
           "warn": true,
+          "downloadDependencies": [
+            {
+              "name": "Microsoft.AspNetCore.App.Ref",
+              "version": "[3.0.1, 3.0.1]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Host.linux-x64",
+              "version": "[3.0.2, 3.0.2]"
+            },
+            {
+              "name": "Microsoft.NETCore.App.Ref",
+              "version": "[3.0.0, 3.0.0]"
+            }
+          ],
           "frameworkReferences": {
             "Microsoft.AspNetCore.App": {
               "privateAssets": "none"
@@ -53,7 +67,7 @@
               "privateAssets": "all"
             }
           },
-          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.0.100/RuntimeIdentifierGraph.json"
+          "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.101/RuntimeIdentifierGraph.json"
         }
       }
     }

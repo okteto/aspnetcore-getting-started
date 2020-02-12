@@ -3,3 +3,4 @@
 /obj/Release
 /out
 
+obj/helloworld.csproj.nuget.cache
