@@ -1,5 +1,5 @@
 name: hello-world
-image: mcr.microsoft.com/dotnet/core/sdk
+image: okteto/dotnetcore:3
 environment:
   - ASPNETCORE_ENVIRONMENT=Development
 command:
