@@ -22,7 +22,8 @@ namespace helloworld.Controllers
         [HttpGet]
         public string Get()
         {
-             return "Hello world REST API!";
+            var message = "Hello world!";
+            return message;
         }
     }
 }

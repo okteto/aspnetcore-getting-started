@@ -1,9 +1,18 @@
 name: hello-world
-image: mcr.microsoft.com/dotnet/core/sdk
+image: okteto/dotnetcore:3
 environment:
-- ASPNETCORE_ENVIRONMENT=Development
+  - ASPNETCORE_ENVIRONMENT=Development
 command:
-- bash
-workdir: /usr/src/app
+  - bash
+remote: 2222
 forward:
-- 5000:5000
+  - 5000:5000
+volumes:
+  - /root/.vscode-server
+  - /root/.nuget/packages
+  - /root/.local/share/NuGet/v3-cache
+  - /root/.dotnet
+resources:
+  limits:
+    cpu: 2
+    memory: 2Gi
