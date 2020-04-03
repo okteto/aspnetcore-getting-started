@@ -1,9 +1,4 @@
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS base
-WORKDIR /app
-EXPOSE 80
-EXPOSE 5000
-
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS build
+FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS dev
 WORKDIR /src
 
 COPY *.csproj ./
@@ -11,12 +6,16 @@ RUN dotnet restore
 
 COPY . ./
 RUN dotnet build -c Release -o /app
-
-FROM build AS publish
 RUN dotnet publish  -c Release -o /app
 
-# Build runtime image
-FROM base as final
+RUN apt-get update && apt-get install -y unzip
+RUN curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l   
+
+###############################################################
+
+FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS prod
+
 WORKDIR /app
-COPY --from=publish /app .
+COPY --from=dev /app .
+EXPOSE 5000
 ENTRYPOINT ["dotnet", "helloworld.dll"]

@@ -13,11 +13,11 @@
   "project": {
     "version": "1.0.0",
     "restore": {
-      "projectUniqueName": "/okteto/helloworld.csproj",
+      "projectUniqueName": "/src/helloworld.csproj",
       "projectName": "helloworld",
-      "projectPath": "/okteto/helloworld.csproj",
+      "projectPath": "/src/helloworld.csproj",
       "packagesPath": "/root/.nuget/packages/",
-      "outputPath": "/okteto/obj/",
+      "outputPath": "/src/obj/",
       "projectStyle": "PackageReference",
       "configFilePaths": [
         "/root/.nuget/NuGet/NuGet.Config"
@@ -59,7 +59,7 @@
             "privateAssets": "all"
           }
         },
-        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.102/RuntimeIdentifierGraph.json"
+        "runtimeIdentifierGraphPath": "/usr/share/dotnet/sdk/3.1.201/RuntimeIdentifierGraph.json"
       }
     }
   }
