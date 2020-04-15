@@ -3,7 +3,7 @@ services:
   hello-world:
     public: true
     image: okteto/hello-world:aspnetcore
-    build: 1
+    build: .
     ports:
       - 5000
     
