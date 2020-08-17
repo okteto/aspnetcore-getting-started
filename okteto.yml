@@ -7,3 +7,5 @@ workdir: /src
 remote: 2222
 forward:
   - 5000:5000
+persistentVolume:
+  enabled: false
