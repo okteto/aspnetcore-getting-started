@@ -1,11 +1,10 @@
 name: hello-world
-image: okteto/hello-world:aspnetcore-dev
+image: okteto.dev/hello-world:dev
 environment:
   - ASPNETCORE_ENVIRONMENT=Development
-command: [ "dotnet", "watch", "run" ]
-workdir: /src
+command: bash
+sync:
+  - .:/src
 remote: 2222
-forward:
-  - 5000:5000
 persistentVolume:
   enabled: false

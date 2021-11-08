@@ -11,7 +11,6 @@ COPY . ./
 RUN dotnet build -c Release -o /app
 RUN dotnet publish  -c Release -o /app
 
-
 ###############################################################
 
 FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS prod
