@@ -22,7 +22,7 @@ namespace helloworld.Controllers
         [HttpGet]
         public string Get()
         {
-            var message = "Hello world!";
+            var message = "Hello world from Okteto!";
             return message;
         }
     }
