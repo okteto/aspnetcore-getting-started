@@ -2,6 +2,6 @@ icon: https://github.com/okteto/aspnetcore-getting-started/raw/master/icon.png
 deploy:
   - okteto build -t okteto.dev/hello-world:dev --target dev .
   - okteto build -t okteto.dev/hello-world:${OKTETO_GIT_COMMIT} .
-  - helm upgrade --install hello-world chart --set tag=${OKTETO_GIT_COMMIT}
+  - helm upgrade --install hello-world chart --set image.tag=${OKTETO_GIT_COMMIT}
 devs:
   - okteto.yml
