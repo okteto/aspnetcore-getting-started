@@ -1,8 +1,5 @@
-FROM mcr.microsoft.com/dotnet/core/sdk:3.1 AS dev
+FROM okteto/dotnetcore:6 AS dev
 WORKDIR /src
-
-RUN apt-get update && apt-get install -y unzip
-RUN curl -sSL https://aka.ms/getvsdbgsh | /bin/sh /dev/stdin -v latest -l /usr/local/bin/vsdbg
 
 COPY *.csproj ./
 RUN dotnet restore
@@ -14,7 +11,7 @@ RUN dotnet publish  -c Release -o /app
 
 ###############################################################
 
-FROM mcr.microsoft.com/dotnet/core/aspnet:3.1 AS prod
+FROM mcr.microsoft.com/dotnet/core/aspnet:6.0 AS prod
 
 WORKDIR /app
 COPY --from=dev /app .
