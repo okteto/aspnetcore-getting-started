@@ -1,17 +1,16 @@
-name: hello-world
 build:
   hello-world:
+    image: okteto.dev/aspnet-hello-world:1.0.0
     context: .
-    dockerfile: Dockerfile
+  hello-world-dev:
+    context: .
+    target: dev
 deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: okteto/hello-world:aspnetcore-dev
+    image: ${OKTETO_BUILD_HELLO_WORLD_DEV_IMAGE}
+    command: bash # [ "dotnet", "watch", "run" ]
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
-    command: [ "dotnet", "watch", "run" ]
-    workdir: /src
     remote: 2222
-    forward:
-      - 5001:5000
