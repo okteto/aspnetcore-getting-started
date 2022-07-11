@@ -10,7 +10,7 @@ deploy:
 dev:
   hello-world:
     image: ${OKTETO_BUILD_HELLO_WORLD_DEV_IMAGE}
-    command: bash # [ "dotnet", "watch", "run" ]
+    command: bash
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     remote: 2222
