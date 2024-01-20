@@ -12,7 +12,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: okteto.dev/aspnet-hello-world:1.0.0
+      - image: okteto/aspnetcore-getting-started:hello-world
         name: hello-world
 
 ---
