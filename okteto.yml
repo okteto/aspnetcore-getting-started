@@ -7,3 +7,5 @@ dev:
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     remote: 2222
+    sync: 
+      - ./:/src
