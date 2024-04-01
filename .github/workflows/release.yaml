@@ -20,10 +20,10 @@ jobs:
           push: true
           tags: okteto/aspnetcore-getting-started:dev
           target: dev
-          context: hello-world
+          context: ./hello-world
       - name: Build and push prod image
         uses: docker/build-push-action@v5
         with:
           push: true
           tags: okteto/aspnetcore-getting-started:hello-world
-          context: hello-world
+          context: ./hello-world
