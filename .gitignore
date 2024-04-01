@@ -1,9 +1,6 @@
 /core.*.*.*
-/obj/Debug
-/obj/Release
-/out
-
-obj/helloworld.csproj.nuget.cache
-
+/hello-world/obj/Debug
+/hello-world/obj/Release
+/hello-world/out
 .DS_Store
 .idea/
