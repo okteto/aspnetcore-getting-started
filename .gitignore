@@ -3,7 +3,6 @@
 /obj/Release
 /out
 
-obj/helloworld.csproj.nuget.cache
-
+/obj
 .DS_Store
 .idea/
