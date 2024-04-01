@@ -1,4 +1,4 @@
-FROM okteto/dotnetcore:6 AS dev
+FROM okteto/dotnetcore:8 AS dev
 WORKDIR /src
 
 COPY *.csproj ./
@@ -10,7 +10,7 @@ RUN dotnet publish  -c Release -o /app
 
 ####################################
 
-FROM mcr.microsoft.com/dotnet/aspnet:6.0 AS prod
+FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS prod
 
 WORKDIR /app
 COPY --from=dev /app .
