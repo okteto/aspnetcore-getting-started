@@ -18,13 +18,13 @@ jobs:
         with:
           username: ${{ secrets.DOCKER_USER }}
           password: ${{ secrets.DOCKER_PASS }}
-      - name: Build and push
+      - name: Build dev image
         uses: docker/build-push-action@v5
         with:
           push: false
           tags: okteto/aspnetcore-getting-started:dev
           target: dev
-      - name: Build and push
+      - name: Build prod image
         uses: docker/build-push-action@v5
         with:
           push: false
