@@ -8,4 +8,4 @@ dev:
       - ASPNETCORE_ENVIRONMENT=Development
     remote: 2222
     sync: 
-      - .:/src
+      - hello-world:/src
