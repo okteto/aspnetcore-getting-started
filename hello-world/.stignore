@@ -1,6 +1,7 @@
 .git
 out
 bin
+!bin/Debug/net8.0/publish
 obj/Debug
 obj/Release
 core.*.*.*

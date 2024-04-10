@@ -1,6 +1,8 @@
 /core.*.*.*
 /hello-world/obj/Debug
 /hello-world/obj/Release
+/hello-world/bin/Debug
+/hello-world/bin/Release
 /hello-world/out
 .DS_Store
 .idea/

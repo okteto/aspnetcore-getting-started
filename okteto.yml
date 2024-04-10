@@ -1,11 +1,17 @@
+build:
+  dev:
+    context: hello-world
+    target: dev
 deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: okteto/aspnetcore-getting-started:dev
-    command: bash
+    image: $OKTETO_BUILD_DEV_IMAGE
+    command: ./debug.sh
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
     remote: 2222
     sync: 
       - hello-world:/src
+    forward:
+    - 2345:2345
