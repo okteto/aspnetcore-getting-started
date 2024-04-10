@@ -2,11 +2,14 @@ build:
   dev:
     context: hello-world
     target: dev
+  prod:
+    context: hello-world
+    target: prod
 deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: $OKTETO_BUILD_DEV_IMAGE
+    image: ramiro/dotnet-rider:8
     command: ./debug.sh
     environment:
       - ASPNETCORE_ENVIRONMENT=Development
