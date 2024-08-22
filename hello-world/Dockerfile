@@ -8,6 +8,12 @@ COPY . ./
 RUN dotnet build -c Release -o /app
 RUN dotnet publish  -c Release -o /app
 
+## Needed for Visual Studio Debugger to work
+RUN apt-get update && apt-get install -y --no-install-recommends \
+    gdb \
+    procps \
+    && rm -rf /var/lib/apt/lists/*
+
 ####################################
 
 FROM mcr.microsoft.com/dotnet/aspnet:8.0 AS prod
