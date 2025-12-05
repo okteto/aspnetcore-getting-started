@@ -2,7 +2,7 @@ deploy:
   - kubectl apply -f k8s.yml
 dev:
   hello-world:
-    image: okteto/aspnetcore-getting-started:dev
+    image: ghcr.io/okteto/aspnetcore-getting-started:dev
     command: bash
     securityContext:
       capabilities:
