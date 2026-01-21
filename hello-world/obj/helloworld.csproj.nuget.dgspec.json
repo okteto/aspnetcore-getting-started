@@ -17,14 +17,13 @@
           "/root/.nuget/NuGet/NuGet.Config"
         ],
         "originalTargetFrameworks": [
-          "netcoreapp8.0"
+          "net8.0"
         ],
         "sources": {
           "https://api.nuget.org/v3/index.json": {}
         },
         "frameworks": {
           "net8.0": {
-            "targetAlias": "netcoreapp8.0",
             "projectReferences": {}
           }
         },
@@ -41,7 +40,6 @@
       },
       "frameworks": {
         "net8.0": {
-          "targetAlias": "netcoreapp8.0",
           "imports": [
             "net461",
             "net462",
