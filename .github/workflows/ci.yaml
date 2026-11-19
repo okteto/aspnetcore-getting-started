@@ -10,22 +10,16 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - name: Checkout
-        uses: actions/checkout@v4
-      - name: Login to Docker Hub
-        uses: docker/login-action@v3
-        with:
-          username: ${{ secrets.DOCKER_USER }}
-          password: ${{ secrets.DOCKER_PASS }}
+        uses: actions/checkout@v7
       - name: Build dev image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           push: false
-          tags: okteto/aspnetcore-getting-started:dev
           target: dev
-          context: ./hello-world
+          context: .
       - name: Build prod image
-        uses: docker/build-push-action@v5
+        uses: docker/build-push-action@v7
         with:
           push: false
-          tags: okteto/aspnetcore-getting-started:hello-world
-          context: ./hello-world
+          target: prod
+          context: .

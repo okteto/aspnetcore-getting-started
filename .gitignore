@@ -1,6 +1,10 @@
-/core.*.*.*
-/hello-world/obj/Debug
-/hello-world/obj/Release
-/hello-world/out
+# dotnet build output
+bin/
+obj/
+
+# Test reports
+*.trx
+
+# Local-only files
 .DS_Store
 .idea/

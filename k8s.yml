@@ -12,7 +12,7 @@ spec:
         app: hello-world
     spec:
       containers:
-      - image: ghcr.io/okteto/aspnetcore-getting-started:hello-world
+      - image: ${OKTETO_BUILD_HELLO_WORLD_IMAGE}
         name: hello-world
 
 ---
@@ -25,7 +25,7 @@ spec:
   type: ClusterIP
   ports:
     - name: "hello-world"
-      port: 5000
+      port: 8080
   selector:
     app: hello-world
 
@@ -45,6 +45,6 @@ spec:
               service:
                 name: hello-world
                 port:
-                  number: 5000
+                  number: 8080
             path: /
             pathType: ImplementationSpecific
