@@ -1,0 +1,18 @@
+# Files that "okteto up" does not synchronize with the development container.
+
+# Git metadata: large, and only needed on your machine
+.git
+
+# Build output generated inside the development container
+/bin
+/obj
+/tests/bin
+/tests/obj
+
+# Test reports
+*.trx
+
+# Local-only files
+.vscode
+.idea
+.DS_Store
