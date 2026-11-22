@@ -4,9 +4,14 @@ RUN curl -sSL https://aka.ms/getvsdbgsh | bash /dev/stdin -v 18.7.10521.2 -l /us
 
 WORKDIR /usr/src/app
 COPY helloworld.csproj .
-RUN dotnet restore
+# The cache mounts keep the NuGet packages folder in the Okteto Build
+# Service, which reuses it between builds. The tests of the Okteto Manifest
+# use the same cache
+RUN --mount=type=cache,target=/root/.nuget/packages \
+    dotnet restore
 COPY . .
-RUN dotnet build && \
+RUN --mount=type=cache,target=/root/.nuget/packages \
+    dotnet build && \
     dotnet publish -c Release -o /app
 
 FROM mcr.microsoft.com/dotnet/aspnet:10.0.15-noble-chiseled AS prod
